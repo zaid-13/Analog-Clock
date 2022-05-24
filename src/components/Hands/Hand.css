@@ -13,6 +13,7 @@
     background-color: #fff;
     width: 2px;
     border-radius: 20px;
+    z-index: 10;
 }
 
 /* Minute Hand */
@@ -30,6 +31,7 @@
     background-color: #FFFADE;
     width: 5px;
     border-radius: 20px;
+    z-index: 5;
 }
 
 [hourhand] .hand {
@@ -43,4 +45,5 @@
     background-color: #E8D5B5;
     width: 10px;
     border-radius: 20px;
+    z-index: 1;
 }
