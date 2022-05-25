@@ -1,78 +1,62 @@
 import React, {useState, useEffect} from 'react';
-
 import './Clock.css';
 
-import HourHand from '../Hands/HourHand';
-import MinuteHand from '../Hands/MinuteHand';
-import SecondHand from '../Hands/SecondHand';
+import HourHand from './Hands/HourHand/HourHand';
+import MinuteHand from './Hands/MinuteHand/MinuteHand';
+import SecondHand from './Hands/SecondHand/SecondHand';
 
 function Clock() {
 
-    const [clockInfo, setClockInfo] = useState({});
+    const [clockData, setClockData] = useState({});
 
-    const clockData = [];
+    let clockNumbers = [];
 
-    let i = 1;
-    let deg = 0;
-    for(; i <= 12; i++) {
-        // clockData.push({num: i, class: `num${i} clock-num`})
-        clockData.push({num: i, degrees: deg += 30})
+    let number = 1;
+    for (; number <= 12; number++) {
+        clockNumbers.push(number)
     }
 
-    console.log({clockData})
-
-    function dateObj() {
+    const dataObj = () => {
         const date = new Date();
-        const seconds = date.getSeconds();
-        const minutes = date.getMinutes();
-        const hours = date.getHours();
-
+        
         return {
-            seconds,
-            minutes,
-            hours
+            seconds: date.getSeconds(),
+            minutes: date.getMinutes(),
+            hours: date.getHours()
         }
     }
 
-    // console.log(clockInfo);
-
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setClockInfo(dateObj());
-            // console.log(clockInfo);     // why does it show an empty object in the setInterval but shows correctly outside the useEffect
-        }, 1000);
+            setClockData(dataObj())
+        }, 1000)
 
         return () => clearInterval(intervalId);
     }, [])
 
-
-    // style={{transform: `rotate(${deg + 30}deg)`}}
+    console.log(dataObj());
 
     return (
         <div clock="true" className="clock">
-            <div className="clock-boundaries">
-                <div className="clock-numbers">
-                    {
-                        
-                        clockData.map((item, index) => {
-                            
-                            return <div key={item.num} style={{
-                                                transform: `rotate(${item.degrees}deg)`, 
-                                                position: "absolute", height: "100%", 
-                                                transformOrigin: "bottom center", 
-                                                // border: "2px solid black",
-                                                left: "50%",
-                                    }}>
-                                        <div style={{transform: `rotate(${360 - item.degrees}deg)`}} >{item.num}</div>
-                                    </div>
-                        })
-                    }
-                </div>
-                <SecondHand seconds={clockInfo.seconds}  />
-                <MinuteHand minutes={clockInfo.minutes}  />
-                <HourHand hours={clockInfo.hours}  />
+            <div className="clock-numbers">
+               { 
+                clockNumbers.map((item) => {
+                        return <div style={{
+                            position: "absolute",
+                            width: "100%",
+                            height: "100%",
+                            transform: `rotate(${item * 30}deg)`,
+                            padding: "5px",
+                            userSelect: "none"
+                        }} key={item}>
+                                <div style={{transform: `rotate(${360 - (item * 30)}deg)`}}>{item}</div>
+                            </div>
+                    })
+                }
             </div>
-            <div className="clock-centre"></div>
+            <SecondHand seconds={clockData.seconds} />
+            <MinuteHand minutes={clockData.minutes} />
+            <HourHand hours={clockData.hours} />
         </div>
     )
 }
