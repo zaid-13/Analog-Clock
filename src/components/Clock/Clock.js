@@ -34,8 +34,6 @@ function Clock() {
         return () => clearInterval(intervalId);
     }, [])
 
-    console.log(dataObj());
-
     return (
         <div clock="true" className="clock">
             <div className="clock-numbers">
