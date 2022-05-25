@@ -7,7 +7,7 @@ function MinuteHand({minutes}) {
     return (
         <div minutehand="true" className="minutehand">
             <div style={{
-                transform: `rotate(${minutes * 6}deg)`
+                transform: `rotate(${minutes * 6}deg) translateX(-50%)`
             }} className="hand"></div>
         </div>
     )
