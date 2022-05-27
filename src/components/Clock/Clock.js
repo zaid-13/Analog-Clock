@@ -9,26 +9,37 @@ function Clock() {
 
     const [clockData, setClockData] = useState({});
 
-    let clockNumbers = [];
+    let clockNumbers = new Array(12);
 
     let number = 1;
     for (; number <= 12; number++) {
         clockNumbers.push(number)
     }
 
+    
+
     const dataObj = () => {
         const date = new Date();
         
         return {
-            seconds: date.getSeconds(),
-            minutes: date.getMinutes(),
-            hours: date.getHours()
+            // seconds: date.getSeconds(),
+            // minutes: date.getMinutes(),
+            // hours: date.getHours()
+            hours: 30 * ((date.getHours() % 12 || 12) + (date.getMinutes()/60)) ,
+            minutes: 6 * date.getMinutes(),
+            seconds:6 * date.getSeconds()
         }
     }
 
     useEffect(() => {
         const intervalId = setInterval(() => {
             setClockData(dataObj())
+            // const newDate = new Date();
+            // console.log({
+            //     hour: 30 * ((newDate.getHours() % 12 || 12) + (newDate.getMinutes()/60)) ,
+            //     minutes: 6 * newDate.getMinutes(),
+            //     seconds:6 * newDate.getSeconds()
+            // })
         }, 1000)
 
         return () => clearInterval(intervalId);

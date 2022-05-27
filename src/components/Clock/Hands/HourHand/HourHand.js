@@ -7,7 +7,7 @@ function HourHand({hours}) {
     return (
         <div hourhand="true" className="hourhand">
             <div style={{
-                transform: `rotate(${hours * 30}deg) translateX(-50%)`
+                transform: `rotate(${hours}deg) translate(-50%)`
             }} className="hand"></div>
         </div>
     )

@@ -1,6 +1,6 @@
 [minutehand] .hand {
     width: 6px;
     height: 35%;
-    background-color: #FFFADE;
+    background-color: green;
     z-index: 2;
 }

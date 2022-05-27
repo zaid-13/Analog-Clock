@@ -7,7 +7,7 @@ function SecondHand({seconds}) {
     return (
         <div secondhand="true" className="secondhand">
             <div style={{
-                transform: `rotate(${seconds * 6}deg) translate(-50%)`
+                transform: `rotate(${seconds}deg) translate(-50%)`
             }} className="hand"></div>
         </div>
     )
