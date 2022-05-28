@@ -1,0 +1,16 @@
+[triangularclock] .clock-container {
+    width: 0;
+    height: 0;
+    border-top: 350px solid #000c3b;;
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+}
+
+[triangularclock] .clock-numbers {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+}

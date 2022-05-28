@@ -34,3 +34,39 @@
     transform: translate(-50%, -50%);
     z-index: 10;
 }
+
+
+.indicators {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+    /* transform: rotate(30deg); */
+}
+
+.indicator-box {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+}
+
+.main-indicator {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    height: 10px;
+    width: 4px;
+    background-color: #fff;
+}
+
+.sub-indicator {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 2px;
+    height: 5px;
+    background-color: #ffffff;
+}

@@ -1,6 +1,6 @@
 [secondhand] .hand {
     width: 1px;
     height: 45%;
-    background-color: #ededed;
+    background-color: red;
     z-index: 3;
 }
