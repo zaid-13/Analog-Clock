@@ -1,16 +1,170 @@
-[triangularclock] .clock-container {
-    width: 0;
-    height: 0;
-    border-top: 350px solid #000c3b;;
-    border-left: 175px solid transparent;
-    border-right: 175px solid transparent;
+[triangularclock] .tr-clock-container-parent {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    pointer-events: none;
+    /* background-color: #000; */
 }
 
+[triangularclock] .tr-clock-container-parent::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-top: 360px solid burlywood;
+    /* border-top: 360px solid #A47449; */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: -100;
+}
+
+[triangularclock] .tr-clock-container-border {
+    width: 0;
+    height: 0;
+    border-left: 155px solid transparent;
+    border-right: 155px solid transparent;
+    border-top: 310px solid burlywood;
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+[triangularclock] .tr-clock-container {
+    width: 300px;
+    height: 300px;
+    /* background-color: white; */
+    position: relative;
+}
+
+[triangularclock] .tr-clock-container::before {
+    content: '';
+    width: 0;
+    height: 0;
+    top: 0;
+    left: -10px;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 320px solid brown;
+    position: absolute;
+    z-index: -10;
+
+    animation-name: swing;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes swing {
+    0% {transform: rotate(5deg);}
+    25% {transform: rotate(-5deg);}
+    50% {transform: rotate(5deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
+}
+
+[triangularclock] .tr-clock-container::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 300px solid #fff;
+    position: relative;
+}
+
+[triangularclock] .corner-triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid brown;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+[triangularclock] .corner-triangle::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid brown;
+    position: absolute;
+    top: -40px;
+    right: -280px;
+    z-index: 10;
+}
+
+[triangularclock] .corner-triangle::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid brown;
+    position: absolute;
+    bottom: -262px;
+    right: -150px;
+    z-index: 10;
+}
+
+
 [triangularclock] .clock-numbers {
-    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    top: 50%;
-    left: 50%;
-    color: #fff;
+    color: #000000;
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+    z-index: 10;
 }
+
+[triangularclock] .indicators {
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+    z-index: 100;
+}
+
+[triangularclock] .indicator-box {
+    transform-origin: 50% 38%;
+    /* transform: rotate(0deg); */
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+    position: absolute;
+    z-index: 100;
+}
+
+[triangularclock] .main-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+}
+
+[triangularclock] .main-indicator::after {
+    content: '.';
+    color: #000;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* [triangularclock] .clock-digits::after {
+    content: '.';
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+} */

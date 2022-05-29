@@ -1,0 +1,21 @@
+[trminutehand] .hand {
+    width: 0;
+    height: 0;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 75px solid #000000;
+    z-index: 2;
+}
+
+[trminutehand] .hand::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-bottom: 35px solid #ffffff;
+    position: absolute;
+    bottom: -62px;
+    left: 50%;
+    transform: translateX(-50%);
+}

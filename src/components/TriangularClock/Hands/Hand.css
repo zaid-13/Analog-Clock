@@ -1,0 +1,6 @@
+[triangularclock] .hand {
+    position: absolute;
+    bottom: 62%;
+    left: 50%;
+    transform-origin: bottom left;
+}
