@@ -39,8 +39,7 @@ function TriangularClock() {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            console.log(dataConst())
-            setClockData(dataConst())
+            setClockData(dataConst());
         }, 1000)
 
         return () => clearInterval(intervalId);
