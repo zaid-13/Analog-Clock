@@ -19,19 +19,19 @@ function TriangularClock() {
 
     const clockNumbers = [
         {num: 12, x: 0, y: 0, bottom: "-4px", left: "50%"},
-        {num: 3, x: -35, y: 70, top: "5px", right: "160px"},
+        {num: 3, x: -35, y: 70, top: "36%", right: "162px", transform: "translateY(-50%)"},
         {num: 6, x: 0, y: 50, top: "-12px", left: "50%"},
-        {num: 9, x: 35, y: 70, top: "5px", left: "165px"}
+        {num: 9, x: 35, y: 70, top: "36%", left: "162px", transform: "translateY(-50%)"}
     ];
 
     const clockIndicator = [
         {deg: 30, x: 0, y: -10, height: "25"},
-        {deg: 60, x: 0, y: -22, height: "50"},
+        {deg: 60, x: 0, y: -22, height: "58"},
         {deg: 120, x: 0, y: 41, height: "20"},
         {deg: 150, x: 0, y: 26, height: "20"},
         {deg: 210, x: 0, y: 26, height: "20"},
         {deg: 240, x: 0, y: 41, height: "20"},
-        {deg: 300, x: 0, y: -22, height: "50"},
+        {deg: 300, x: 0, y: -22, height: "58"},
         {deg: 330, x: 0, y: -10, height: "25"}
     ]
 
@@ -89,7 +89,8 @@ function TriangularClock() {
                                                         right: `${item.right}`,
                                                         bottom: `${item.bottom}`, 
                                                         left: `${item.left}`,
-                                                        fontSize: "12px"
+                                                        transform: `${item.transform}`,
+                                                        fontSize: "14px"
                                                         }}>.</div>
                                                 </div>
                                             </div>
