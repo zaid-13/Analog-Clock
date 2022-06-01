@@ -7,7 +7,7 @@ import TriangularClock from './components/TriangularClock/TriangularClock';
 
 function App() {
 
-    const [isCircular, setIsCircular] = useState(false);
+    const [isCircular, setIsCircular] = useState(true);
 
     return (
         <>
@@ -16,8 +16,7 @@ function App() {
             <button className={`toggle-button ${!isCircular && "active"}`} onClick={() => setIsCircular(!isCircular)}></button>
             <span>Triangular Clock</span>
         </div>
-        <div className="clock-container">
-            
+        <div className="clock-container">           
             {isCircular ? 
             <Clock /> :
             <TriangularClock />}
