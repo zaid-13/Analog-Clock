@@ -7,7 +7,7 @@ import TriangularClock from './components/TriangularClock/TriangularClock';
 
 function App() {
 
-    const [isCircular, setIsCircular] = useState(true);
+    const [isCircular, setIsCircular] = useState(false);
 
     return (
         <>

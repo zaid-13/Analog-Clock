@@ -18,13 +18,11 @@ function TriangularClock() {
     const [clockData, setClockData] = useState(dataConst());
 
     const clockNumbers = [
-        {num: 12, x: 0, y: 0},
-        {num: 3, x: -35, y: 70},
-        {num: 6, x: 0, y: 50},
-        {num: 9, x: 35, y: 70}
+        {num: 12, x: 0, y: 0, bottom: "-4px", left: "50%"},
+        {num: 3, x: -35, y: 70, top: "5px", right: "160px"},
+        {num: 6, x: 0, y: 50, top: "-12px", left: "50%"},
+        {num: 9, x: 35, y: 70, top: "5px", left: "165px"}
     ];
-
-    // const clockIndicator = [30, 60, 120, 150, 210, 240, 300, 330];
 
     const clockIndicator = [
         {deg: 30, x: 0, y: -10, height: "25"},
@@ -83,7 +81,17 @@ function TriangularClock() {
                                                 <div className="clock-digits"
                                                     style={{
                                                     transform: `translate(${item.x}px, ${item.y}px) rotate(${(item.num * 30) * -1}deg)`
-                                                }}>{item.num}</div>
+                                                }}>
+                                                    {item.num}
+                                                    <div style={{
+                                                        position: "absolute",
+                                                        top: `${item.top}`,
+                                                        right: `${item.right}`,
+                                                        bottom: `${item.bottom}`, 
+                                                        left: `${item.left}`,
+                                                        fontSize: "12px"
+                                                        }}>.</div>
+                                                </div>
                                             </div>
                                         )
                                     })

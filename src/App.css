@@ -69,5 +69,4 @@
 .active.toggle-button::after {
     right: 2px;
     left: auto;
-    transition: all 2000ms;
 }
